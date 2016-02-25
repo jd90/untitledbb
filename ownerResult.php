@@ -58,6 +58,24 @@ try {
 
 ?>
 
+<?php
+$conn = new PDO ( "sqlsrv:server = tcp:bbsqldb.database.windows.net,1433; Database = SQL_BB", "teamdsqldb", "Sql20022016*");
+$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+try{
+    $st = $conn-> query("SELECT * FROM [customer] FROM [B&B]");
+    foreach($st->fetchAll() as $row) {
+        $newhtml =
+            <<<NEWHTML
+                    <p>{$row[firstname]}</p>
+NEWHTML;
+        print($newhtml);
+    }
+}
+catch(PDOException $e)
+{print"$e";}
+?>
+
+
 </main>
 
 
