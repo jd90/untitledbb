@@ -53,11 +53,7 @@ try {
     $st1 = "INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES ($ownerid, $title, $firstname, $surname, $email, $address, $password, $telephone)";
 
 
-
     $conn->exec($st1);
-
-    echo "New records created successfully";
-
 
 }catch(PDOException $e)
 {
