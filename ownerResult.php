@@ -50,19 +50,11 @@ $conn = new PDO ( "sqlsrv:server = tcp:bbsqldb.database.windows.net,1433; Databa
 $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
 try {
-    $st = $conn-> prepare("INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES (:ownerid, :title, :firstname, :surname, :email, :password, :address, :telephone)");
-// prepare and bind
+    $st = $conn-> prepare("INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES ($ownerid, $title, $firstname, $surname, $email, $address, $password, $telephone)");
 
-    $st->bindParam(':ownerid', $ownerid);
-    $st->bindParam(':title', $title);
-    $st->bindParam(':firstname', $firstname);
-    $st->bindParam(':surname', $surname);
-    $st->bindParam(':email', $email);
-    $st->bindParam(':password', $password);
-    $st->bindParam(':address', $address);
-    $st->bindParam(':telephone', $telephone);
 
-    $st->execute();
+
+    $conn->exec($st);
 
     echo "New records created successfully";
 
