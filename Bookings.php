@@ -49,6 +49,10 @@ NEWHTML;
                         }
                         catch(PDOException $e)
                         {print"$e";}
+
+
+                        $st->close();
+                        $conn->close();
                         ?>
 
 

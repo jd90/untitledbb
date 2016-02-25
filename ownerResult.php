@@ -50,12 +50,22 @@ $conn = new PDO ( "sqlsrv:server = tcp:bbsqldb.database.windows.net,1433; Databa
 $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
 try {
-    $st = $conn->prepare("INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES ($ownerid, $title, $firstname, $surname, $email, $password, $address $telephone )");
+    $st = $conn-> prepare("INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES (?, ?, ?)");
+// prepare and bind
+
+    $st->bind_param("issssssi", $ownerid, $title, $firstname, $surname, $email, $password, $address, $telephone);
+
+    $st->execute();
+
+    echo "New records created successfully";
+
 
 }catch(PDOException $e)
 {
     print"$e";
 }
+
+
 
 ?>
 
