@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings Page</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+</head>
+
+<header>
+
+    <nav>
+
+        <ul>
+            <li><a href="Home.html">Home page</a></li>
+            <li><a href="Bookings.php">Bookings</a></li>
+            <li><a href="OwnerRegistration.html">Owner Registration</a></li>
+            <li><a href="B&Bregistration.html">B&B Registration</a></li>
+        </ul>
+    </nav>
+
+</header>
+<body>
+
+<main>
+
 <?php
 /**
  * Created by PhpStorm.
@@ -30,8 +56,16 @@ try {
     print"$e";
 }
 
-
-
-
-
 ?>
+
+</main>
+
+
+
+
+<footer>
+
+    <p>Copyright. Team D Solutions.</p>
+</footer>
+</body>
+</html>
