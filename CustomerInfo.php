@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Customer Info</title>
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
 </head>
 
