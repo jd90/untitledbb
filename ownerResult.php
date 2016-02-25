@@ -33,16 +33,16 @@
  */
 
 
-$ownerid= $_GET['ownerid'];
-$firstname= $_GET['firstname'];
-$surname= $_GET['surname'];
-$title =$_GET['title'];
-$email= $_GET['email'];
-$password= $_GET['password'];
-$password2= $_GET['password2'];
-$address= $_GET['address'];
-$address2= $_GET['address2'];
-$telephone= $_GET['telephone'];
+$ownerid= $_POST['ownerid'];
+$firstname= $_POST['firstname'];
+$surname= $_POST['surname'];
+$title =$_POST['title'];
+$email= $_POST['email'];
+$password= $_POST['password'];
+$password2= $_POST['password2'];
+$address= $_POST['address'];
+$address2= $_POST['address2'];
+$telephone= $_POST['telephone'];
 
 
 
@@ -50,9 +50,7 @@ $conn = new PDO ( "sqlsrv:server = tcp:bbsqldb.database.windows.net,1433; Databa
 $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
 try {
-    $st1 = "INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES ('848', 'Mr', 'norman', 'bates', 'mummysboy@email.com', '124 street, west dyke', 'pas1', '1231234')";
-
-//('".$ownerid."', '".$title."', '".$firstname."', '".$surname."', '".$email."', '".$address."', '".$password."', '".$telephone."')";
+    $st1 = "INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES ('".$ownerid."', '".$title."', '".$firstname."', '".$surname."', '".$email."', '".$address."', '".$password."', '".$telephone."')";
     $conn->exec($st1);
 
 }catch(PDOException $e)
