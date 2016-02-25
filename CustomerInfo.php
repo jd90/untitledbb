@@ -117,9 +117,6 @@ NEWHTML;
     {print"$e";}
 
 
-
-    $st->close();
-    $conn->close();
     ?>
 </div>
 
