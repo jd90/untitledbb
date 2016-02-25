@@ -62,7 +62,7 @@ try {
 $conn = new PDO ( "sqlsrv:server = tcp:bbsqldb.database.windows.net,1433; Database = SQL_BB", "teamdsqldb", "Sql20022016*");
 $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 try{
-    $st = $conn-> query("SELECT * FROM [Customer] FROM [B&B]");
+    $st = $conn-> query("SELECT * FROM [Customer]");
     foreach($st->fetchAll() as $row) {
         $newhtml =
             <<<NEWHTML
