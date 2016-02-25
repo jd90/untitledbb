@@ -34,15 +34,15 @@
 
 
 $ownerid= $_GET['ownerid'];
-$firstname= $_GET['ownerid'];
-$surname= $_GET['ownerid'];
+$firstname= $_GET['firstname'];
+$surname= $_GET['surname'];
 $title =$_GET['title'];
-$email= $_GET['ownerid'];
-$password= $_GET['ownerid'];
-$password2= $_GET['ownerid'];
-$address= $_GET['ownerid'];
-$address2= $_GET['ownerid'];
-$telephone= $_GET['ownerid'];
+$email= $_GET['email'];
+$password= $_GET['password'];
+$password2= $_GET['password2'];
+$address= $_GET['address'];
+$address2= $_GET['address2'];
+$telephone= $_GET['telephone'];
 
 
 
@@ -50,7 +50,7 @@ $conn = new PDO ( "sqlsrv:server = tcp:bbsqldb.database.windows.net,1433; Databa
 $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
 try {
-    $st1 = "INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES (`$ownerid`, `$title`, `$firstname`, `$surname`, `$email`, `$address`, `$password`, `$telephone`)";
+    $st1 = "INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES ($ownerid, $title, $firstname, $surname, $email, $address, $password, $telephone)";
 
 
     $conn->exec($st1);
