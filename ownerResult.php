@@ -70,8 +70,10 @@ try{
     foreach($st->fetchAll() as $row) {
         $newhtml =
             <<<NEWHTML
+
                     <p>{$row[firstname]}</p>
-                    <p>{$row[ownerid]}</p>
+                    <p>{$row[surname]}</p>
+            <br>
 NEWHTML;
         print($newhtml);
     }
