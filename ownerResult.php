@@ -36,6 +36,7 @@
 $ownerid= $_GET['ownerid'];
 $firstname= $_GET['ownerid'];
 $surname= $_GET['ownerid'];
+$title =$_GET['title'];
 $email= $_GET['ownerid'];
 $password= $_GET['ownerid'];
 $password2= $_GET['ownerid'];
@@ -49,7 +50,7 @@ $conn = new PDO ( "sqlsrv:server = tcp:bbsqldb.database.windows.net,1433; Databa
 $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
 try {
-    $st = $conn->prepare("INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES ($ownerid, $firstname, $surname, $email, $password, $address $telephone )");
+    $st = $conn->prepare("INSERT INTO Owner ([ownerid], [title], [firstname], [surname], [email], [address], [password], [telephone]) VALUES ($ownerid, $title, $firstname, $surname, $email, $password, $address $telephone )");
 
 }catch(PDOException $e)
 {
