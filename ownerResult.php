@@ -73,6 +73,7 @@ try{
         $newhtml =
             <<<NEWHTML
                     <p>{$row[firstname]}</p>
+                    <p>{$row[ownerid]}</p>
 NEWHTML;
         print($newhtml);
     }
